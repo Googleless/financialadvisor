@@ -11,12 +11,19 @@
         <form action="/read-form" method="post">
             <input name="aiAgent" type="radio" id="deepseek" value="deepseek" checked>
             <label for="ai-agent">Deepseek</label><br>
-            <input name="aiAgent" type="radio" id="deepseek" value="openrouter">
+            <input name="aiAgent" type="radio" id="openrouter" value="openrouter">
             <label for="ai-agent">Openrouter</label><br>
             <label for="input">Ввод</label>
-            <input name="userInput" type="text">
+            <input name="userInput" type="text" value="{{ session.user_input or '' }}">
             <input type="submit" value="Отправить">
         </form>
     </div>
+
+    {% if response %}
+    <div>
+        <h2>ответ нейросети:</h2>
+        <p> {{ response }} </p>
+    </div>
+    {% endif %}
 </body>
 </html>
