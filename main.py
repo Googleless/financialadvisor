@@ -1,8 +1,6 @@
-from dotenv import load_dotenv
-import os
-import openai
+from app import app
 
-load_dotenv()
-
-openai.api_key = os.getenv('OPENAI_API_KEY')
-print(openai.api_key)
+# Main Driver Function
+if __name__ == '__main__':
+    # Run the application on the local development server
+    app.run()

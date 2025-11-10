@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Финансовая сводка новостей</title>
+</head>
+<body>
+    <h1>Форма для взаимодействия с ботом:</h1>
+    <div>
+        <form action="/read-form" method="post">
+            <input name="aiAgent" type="radio" id="deepseek" value="deepseek" checked>
+            <label for="ai-agent">Deepseek</label><br>
+            <input name="aiAgent" type="radio" id="deepseek" value="openrouter">
+            <label for="ai-agent">Openrouter</label><br>
+            <label for="input">Ввод</label>
+            <input name="userInput" type="text">
+            <input type="submit" value="Отправить">
+        </form>
+    </div>
+</body>
+</html>
