@@ -35,8 +35,7 @@ def run_deepseek(user_input, api_key):
             {"role": "system", "content": "Ты — финансовый ассистент Землянского Филиппа Олеговича. Твоя задача — составить подробный, но не длинный и затянутый, отчет о запрошенной теме с ссылками на источники. Ты будешь показывать только самую достоверную и актуальную информацию к запросу."},
             {"role": "user", "content": user_input},
         ],
-        temperature=1,
-        tools=tools
+        temperature=1
     )
     return response.choices[0].message.content
 
