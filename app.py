@@ -3,26 +3,14 @@ from datetime import timedelta
 from dotenv import load_dotenv
 from ai_handler import run_model
 
+# loads flask secret key
 load_dotenv()
 
 app = Flask(__name__)
 
+# saves session for a week, plan to make it also retain the AI history of responses not to waste API tokens on pointless generations
 app.permanent_session_lifetime = timedelta(days=7)
 app.secret_key = 'FLASK_SESH_KEY'
-
-
-def handle_deepseek(user_input):
-    return f"deepseek: {user_input}"
-
-def handle_openrouter(user_input):
-    return f"openrouter: {user_input}"
-
-def aiAgent(ai_agent, user_input):
-    switch={
-        'deepseek':handle_deepseek,
-        'openrouter':handle_openrouter
-    }
-    return switch.get(ai_agent, lambda x: "Unknown agent")(user_input)
 
 @app.route('/', methods=['GET'])
 def index():

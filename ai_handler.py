@@ -3,6 +3,7 @@ from openai import OpenAI
 from dotenv import load_dotenv
 from flask import session
 
+#loads ai api keys
 load_dotenv()
 
 api_keys = {
