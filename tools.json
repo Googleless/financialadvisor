@@ -1,0 +1,17 @@
+{
+    "type": "function",
+    "function": {
+        "name": "get_news",
+        "description": "Найти в интернете новости о запрошенных акциях. Пользователь должен указать интересующие компании, либо опираться на на самые большие компании на рынке.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "company": {
+                    "type": "string",
+                    "description": "Название компании, например: ВТБ, Сбербанк."
+                }
+            },
+            "required": ["company"]
+        }
+    }
+}
